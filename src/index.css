@@ -1,0 +1,86 @@
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --line-height: 1.6;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --color-bg: #0a0a0a;
+  --color-surface: #1a1a1a;
+  --color-text: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-primary: #646cff;
+  --color-primary-hover: #7c83fd;
+  --color-accent: #9f5afd;
+  --gradient-primary: linear-gradient(135deg, #646cff 0%, #9f5afd 100%);
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --border-radius: 8px;
+  --transition-fast: 0.2s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--border-radius);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
