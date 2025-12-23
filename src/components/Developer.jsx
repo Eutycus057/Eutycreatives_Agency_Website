@@ -16,9 +16,9 @@ const Developer = () => {
     ];
 
     return (
-        <section id="developer" style={{ padding: '80px 0', background: 'rgba(255, 255, 255, 0.02)' }}>
-            <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 2rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'center' }}>
+        <section id="developer" className="section-padding" style={{ background: 'rgba(255, 255, 255, 0.02)' }}>
+            <div className="container" style={{ maxWidth: '1100px' }}>
+                <div className="responsive-grid responsive-grid-developer" style={{ alignItems: 'center' }}>
 
                     {/* Photo Side */}
                     <motion.div
@@ -26,7 +26,7 @@ const Developer = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        style={{ position: 'relative' }}
+                        style={{ position: 'relative', maxWidth: '400px', margin: '0 auto' }}
                     >
                         <div style={{
                             position: 'relative',
@@ -74,19 +74,19 @@ const Developer = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontWeight: 800 }}>
+                        <h2 style={{ fontSize: 'var(--fs-h2)', marginBottom: '1.5rem', fontWeight: 800 }}>
                             About the <span style={{ color: '#00BFFF' }}>Developer</span>
                         </h2>
 
-                        <p style={{ color: '#ccc', lineHeight: '1.6', marginBottom: '1.2rem', fontSize: '1.05rem' }}>
+                        <p style={{ color: '#ccc', lineHeight: '1.6', marginBottom: '1.2rem', fontSize: 'var(--fs-body)' }}>
                             I am a software developer specializing in <span style={{ color: '#00BFFF' }}>AI-powered websites</span>, intelligent applications, and business automation solutions. My work focuses on building reliable, scalable digital systems that combine clean architecture, modern web technologies, and practical artificial intelligence to solve real-world problems.
                         </p>
 
-                        <p style={{ color: '#ccc', lineHeight: '1.6', marginBottom: '2rem', fontSize: '1.05rem' }}>
+                        <p style={{ color: '#ccc', lineHeight: '1.6', marginBottom: '2rem', fontSize: 'var(--fs-body)' }}>
                             I bring a strong academic foundation in computing and technology education, complemented by professional training in <span style={{ color: '#FF8C00' }}>Generative AI</span>. This background allows me to approach development with both technical depth and structured problem-solving, ensuring solutions are effective, maintainable, and aligned with business goals.
                         </p>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                        <div className="responsive-grid responsive-grid-2" style={{ gap: '2rem' }}>
                             <div>
                                 <h4 style={{ color: 'white', marginBottom: '0.8rem', fontSize: '1.1rem' }}>Academic Background</h4>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -109,12 +109,20 @@ const Developer = () => {
                             </div>
                         </div>
 
-                        <p style={{ color: '#ccc', marginTop: '2rem', fontStyle: 'italic', fontSize: '1.05rem' }}>
+                        <p style={{ color: '#ccc', marginTop: '2rem', fontStyle: 'italic', fontSize: 'var(--fs-body)' }}>
                             I am passionate about leveraging emerging technologies to create digital experiences that are not only functional and efficient, but also future-ready.
                         </p>
                     </motion.div>
                 </div>
             </div>
+            <style>{`
+                @media (min-width: 992px) {
+                    .responsive-grid-developer {
+                        grid-template-columns: 1fr 1.5fr !important;
+                        gap: 4rem !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 };

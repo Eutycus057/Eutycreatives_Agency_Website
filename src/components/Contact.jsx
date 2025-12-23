@@ -43,35 +43,34 @@ const Contact = () => {
     const inputStyle = {
         width: '100%',
         padding: '1rem',
-        marginBottom: '1rem',
         background: 'rgba(255, 255, 255, 0.05)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
-        borderRadius: '8px',
+        borderRadius: '12px',
         color: 'white',
         fontSize: '1rem',
         outline: 'none',
-        transition: 'border-color 0.3s'
+        transition: 'all 0.3s'
     };
 
     return (
-        <section id="contact" style={{ padding: '100px 0', background: 'var(--color-bg)', textAlign: 'center' }}>
-            <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
+        <section id="contact" className="section-padding" style={{ background: 'var(--color-bg)', textAlign: 'center' }}>
+            <div className="container" style={{ maxWidth: '800px' }}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <h2 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: 800 }}>
+                    <h2 style={{ fontSize: 'var(--fs-h2)', marginBottom: '1rem', fontWeight: 800 }}>
                         <span style={{ color: '#00BFFF' }}>Let's</span> <span style={{ color: '#FF8C00' }}>Talk</span>
                     </h2>
-                    <p style={{ fontSize: '1.2rem', color: '#888', marginBottom: '3rem' }}>
+                    <p style={{ fontSize: 'var(--fs-body)', color: '#888', marginBottom: '3rem' }}>
                         Have a groundbreaking idea? Let's bring it to life together.
                     </p>
 
                     <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                            <div style={{ marginBottom: '1rem' }}>
+                        <div className="responsive-grid responsive-grid-2" style={{ gap: '1rem', marginBottom: '1rem' }}>
+                            <div>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', color: '#aaa', fontSize: '0.9rem' }}>Name</label>
                                 <input
                                     type="text"
@@ -83,7 +82,7 @@ const Contact = () => {
                                     placeholder="Your Name"
                                 />
                             </div>
-                            <div style={{ marginBottom: '1rem' }}>
+                            <div>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', color: '#aaa', fontSize: '0.9rem' }}>Email</label>
                                 <input
                                     type="email"
@@ -123,23 +122,19 @@ const Contact = () => {
                             ></textarea>
                         </div>
 
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: '1rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: '1.5rem' }}>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 type="submit"
+                                className="btn"
                                 disabled={status === 'sending'}
                                 style={{
-                                    padding: '1.2rem 3rem',
+                                    padding: '1rem 4rem',
                                     fontSize: '1.1rem',
-                                    fontWeight: 'bold',
-                                    background: 'linear-gradient(45deg, #00BFFF, #FF8C00)',
-                                    color: 'white',
-                                    border: 'none',
-                                    borderRadius: '50px',
                                     cursor: status === 'sending' ? 'not-allowed' : 'pointer',
-                                    boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
-                                    opacity: status === 'sending' ? 0.7 : 1
+                                    opacity: status === 'sending' ? 0.7 : 1,
+                                    width: 'clamp(200px, 100%, 300px)'
                                 }}
                             >
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
@@ -161,7 +156,7 @@ const Contact = () => {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0 }}
-                                        style={{ color: '#ff4d4d', fontWeight: 'bold' }}
+                                        style={{ color: '#ff4d4d', fontWeight: 'bold', maxWidth: '400px', textAlign: 'center' }}
                                     >
                                         Something went wrong. Please try again or email us directly at eutycreatives@gmail.com.
                                     </motion.p>
