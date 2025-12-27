@@ -27,6 +27,10 @@ const ChatBot = () => {
 
     useEffect(() => {
         if (isOpen) scrollToBottom();
+
+        const handleToggle = () => setIsOpen(true);
+        window.addEventListener('toggle-chatbot', handleToggle);
+        return () => window.removeEventListener('toggle-chatbot', handleToggle);
     }, [messages, isOpen]);
 
     const handleSend = async (customText = null) => {

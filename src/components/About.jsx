@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="about" className="section-padding" style={{ background: 'var(--color-surface)' }}>
+        <section id="about" className="section-padding" style={{ background: 'var(--color-surface)', padding: '40px 0' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -11,19 +11,19 @@ const About = () => {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <h2 style={{ fontSize: 'var(--fs-h2)', marginBottom: '2.5rem', textAlign: 'center', fontWeight: 800 }}>
+                    <h2 style={{ fontSize: 'var(--fs-h3)', marginBottom: '1.5rem', textAlign: 'center', fontWeight: 800 }}>
                         <span style={{ color: '#00BFFF' }}>About</span> <span style={{ color: '#FF8C00' }}>Us</span>
                     </h2>
                     <div style={{
-                        maxWidth: '900px',
+                        maxWidth: '800px',
                         margin: '0 auto',
                         textAlign: 'left',
-                        fontSize: 'var(--fs-body)',
-                        lineHeight: '1.7',
+                        fontSize: '0.95rem',
+                        lineHeight: '1.5',
                         color: '#bbb',
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: '1rem'
+                        gap: '0.75rem'
                     }}>
                         <p>
                             At <strong>Eutycreatives</strong>, we design and build <span style={{ color: '#00BFFF' }}>AI-powered websites</span> and <span style={{ color: '#FF8C00' }}>intelligent applications</span> that help businesses operate smarter, faster, and more efficiently. We combine modern web technologies with <span style={{ color: '#00BFFF' }}>artificial intelligence</span> to deliver digital products that are not only visually compelling, but also <span style={{ color: '#FF8C00' }}>adaptive</span>, <span style={{ color: '#00BFFF' }}>data-driven</span>, and <span style={{ color: '#FF8C00' }}>scalable</span>.
@@ -38,9 +38,9 @@ const About = () => {
                             fontWeight: 'bold',
                             color: 'white',
                             borderLeft: '4px solid #00BFFF',
-                            paddingLeft: '1.5rem',
-                            marginTop: '1rem',
-                            fontSize: '1.15rem'
+                            paddingLeft: '1.2rem',
+                            marginTop: '0.5rem',
+                            fontSize: '1.05rem'
                         }}>
                             At Eutycreatives, we do more than build websites — we engineer <span style={{ color: '#FF8C00' }}>intelligent digital experiences</span>.
                         </p>

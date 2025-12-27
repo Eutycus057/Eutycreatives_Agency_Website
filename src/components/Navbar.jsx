@@ -5,7 +5,7 @@ import logo from '../assets/logo.png';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const navItems = ['Home', 'About', 'Projects', 'Contact'];
+    const navItems = ['Home', 'About', 'Developer', 'Projects', 'Contact'];
 
     return (
         <motion.nav
