@@ -1,3 +1,4 @@
+// Finalized 3D Carousel & Deployment Sync
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import aiAgentChat from '../assets/ai-agent-chat-ui.png';
