@@ -64,7 +64,7 @@ const ResumeGenerator = ({ isOpen, onClose }) => {
         if (jdFile) formData.append('job_description_file', jdFile);
 
         try {
-            const response = await fetch('http://localhost:8000/analyze', {
+            const response = await fetch('/api/analyze', {
                 method: 'POST',
                 body: formData,
             });
@@ -97,7 +97,7 @@ const ResumeGenerator = ({ isOpen, onClose }) => {
         if (experience) formData.append('experience_level', experience);
 
         try {
-            const response = await fetch('http://localhost:8000/revamp', {
+            const response = await fetch('/api/revamp', {
                 method: 'POST',
                 body: formData,
             });
@@ -120,7 +120,7 @@ const ResumeGenerator = ({ isOpen, onClose }) => {
         if (!revampedData) return;
         setExporting(format);
         try {
-            const response = await fetch(`http://localhost:8000/export?format=${format}`, {
+            const response = await fetch(`/api/export?format=${format}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(revampedData),
