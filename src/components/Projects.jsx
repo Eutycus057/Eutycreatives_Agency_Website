@@ -25,6 +25,26 @@ const projects = [
         color: '#646cff'
     },
     {
+        id: 'automated-resume-generator',
+        title: 'ATS-Compliant Resume Generator',
+        thumbnail: '/images/projects/resume-generator.png',
+        shortDescription: 'AI-powered tool that optimizes resumes for specific job descriptions to bypass ATS filters.',
+        problem: 'Job seekers often fail to pass initial ATS screenings due to poor keyword matching and formatting issues.',
+        solution: 'Built an AI pipeline that analyzes JDs and rephrases resume content to highlight relevance without fabricating data.',
+        value: 'Increases interview callback rates by ensuring resumes are tailored to specific role requirements.',
+        features: [
+            'PDF/DOCX resume parsing',
+            'AI job description analysis',
+            'Keyword density optimization',
+            'ATS-safe DOCX generation'
+        ],
+        techStack: ['FastAPI', 'OpenAI', 'React', 'python-docx'],
+        githubUrl: 'https://github.com/Eutycus057',
+        liveUrl: '#',
+        category: 'AI & Productivity',
+        color: '#00d2ff'
+    },
+    {
         id: 'ecommerce-scaling',
         title: 'Next-Gen E-commerce Platform',
         thumbnail: '/images/projects/ecommerce-thumbnail.png',
@@ -92,6 +112,9 @@ const ProjectCard = ({ project, index }) => {
         if (project.id === 'ai-conversational-agent') {
             e.preventDefault();
             window.dispatchEvent(new CustomEvent('toggle-chatbot'));
+        } else if (project.id === 'automated-resume-generator') {
+            e.preventDefault();
+            window.dispatchEvent(new CustomEvent('toggle-resume-generator'));
         }
     };
 
