@@ -4,7 +4,7 @@ from fastapi.responses import StreamingResponse
 import uvicorn
 import os
 import json
-from parser import parse_resume
+from resume_parser import parse_resume
 from ai_engine import analyze_job_description, analyze_resume_compatibility, optimize_resume
 from generator import generate_docx, generate_pdf
 
